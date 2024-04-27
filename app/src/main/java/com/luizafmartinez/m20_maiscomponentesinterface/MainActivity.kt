@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private  lateinit var btnClique: Button
+    //private  lateinit var btnClique: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -24,11 +24,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Usando método antigo para fazer vinculação (findViewById)
+        /*
         btnClique = findViewById(R.id.btn_clique)
-
         btnClique.setOnClickListener {
             Toast.makeText(this, "Olá", Toast.LENGTH_SHORT).show()
         }
+        */
 
     }
 }
