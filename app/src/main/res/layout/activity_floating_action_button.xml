@@ -29,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:constraint_referenced_ids="fabAlerta,fabCamera" />
+        app:constraint_referenced_ids="fabAlerta,fabCamera"
+        tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAlerta"
@@ -58,4 +59,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_adicionar_foto_24"
         app:tint="@android:color/holo_orange_light" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:text="SALVAR"
+        android:textStyle="bold"
+        app:backgroundTint="#CDDC39"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconPadding="20dp"
+        app:iconTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#F50909"
+        app:strokeWidth="4dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
