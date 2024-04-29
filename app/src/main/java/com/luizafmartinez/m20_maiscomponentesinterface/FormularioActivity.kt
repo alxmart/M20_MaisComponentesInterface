@@ -16,9 +16,7 @@ class FormularioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         setContentView(binding.root)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -29,12 +27,24 @@ class FormularioActivity : AppCompatActivity() {
 
             btnEnviar.setOnClickListener {
                 //checkbox()
+                radioButton()
             }
+            
+           /*
+            rbMasculino.setOnClickListener {
+                
+            }
+            rbMasculino.setOnCheckedChangeListener { buttonView, isChecked ->
 
+            }
+            */
+
+            /*
             cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
                 val resultado = if ( isChecked ) "SIM" else "NÃO"
                 binding.textResultado.text = "Valor selecionado: $resultado"
             }
+            */
 
             /*
             cbConfirmacao.setOnClickListener {
@@ -44,23 +54,37 @@ class FormularioActivity : AppCompatActivity() {
             }
             */
         }
+    }
+
+    private fun radioButton() {
+        val masculino = binding.rbMasculino.isChecked
+        //binding.textResultado.text = if (masculino) "Masculino" else "Feminino"
+
+        val idItemSelecionado = binding.rgSexo.checkedRadioButtonId
+        binding.textResultado.text = when( idItemSelecionado ) {
+            R.id.rbMasculino -> "Masculino"
+            R.id.rbFeminino -> "Feminino"
+            else -> "Nada selecionado"
+        }
+
+        binding.rgSexo.clearCheck()
+
+
 
     }
 
+
+
+   /*
+    private fun radioButton() {
+        val selecionadoMasculino = binding.rbMasculino.isChecked
+        if ( selecionadoMasculino ) {
+            //
+        } else {
+           //
+        }
+    }
+    */
+
     //private fun checkbox() {
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
