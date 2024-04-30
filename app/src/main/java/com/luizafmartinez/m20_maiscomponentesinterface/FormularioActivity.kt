@@ -1,10 +1,14 @@
 package com.luizafmartinez.m20_maiscomponentesinterface
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.luizafmartinez.m20_maiscomponentesinterface.databinding.ActivityFormularioBinding
 
 class FormularioActivity : AppCompatActivity() {
@@ -23,12 +27,18 @@ class FormularioActivity : AppCompatActivity() {
             insets
         }
 
-        with ( binding ) {
+        with(binding) {
 
-            btnEnviar.setOnClickListener {
+            btnEnviar.setOnClickListener { view ->
                 //checkbox()
                 //radioButton()
-                switchToggle()
+                //switchToggle()
+                exibirSnackBar(view)
+                /*Snackbar.make(
+                    view,
+                    "Alteração feita com Sucesso",
+                    Snackbar.LENGTH_LONG
+                ).show()*/
             }
 
             /*
@@ -39,8 +49,8 @@ class FormularioActivity : AppCompatActivity() {
 
             }
             */
-            
-           /*
+
+            /*
             rbMasculino.setOnClickListener {
                 
             }
@@ -66,13 +76,54 @@ class FormularioActivity : AppCompatActivity() {
         }
     }
 
+    private fun exibirSnackBar(view: View) {
+
+        val snackBar = Snackbar.make(
+            view,
+            "Alteração feita com Sucesso",
+            Snackbar.LENGTH_LONG
+        )
+
+        snackBar.setAction("Confirmar") {
+         Toast.makeText(this, "DESFAZER", Toast.LENGTH_LONG).show()
+        }
+
+        snackBar.setTextColor(
+            //resources.getColor(R.color.purple_200) DEPRECATED
+            ContextCompat.getColor(this,R.color.deep_purple)
+            //android.R.color.holo_orange_dark
+        )
+
+        snackBar.setActionTextColor(
+            ContextCompat.getColor(
+            this,
+            R.color.deep_orange)
+        )
+
+        snackBar.setBackgroundTint(
+            ContextCompat.getColor(
+            this,
+            R.color.gray_green)
+        )
+
+        snackBar.show()
+    }
+
+    /*private fun exibirSnackBar(view: View) {
+
+            val snackBar = Snackbar.make(
+                view,
+                "Alteração feita com Sucesso",
+                Snackbar.LENGTH_LONG
+            ).show()
+        }*/
+
     private fun switchToggle() {
+        val switchMarcado = binding.switchNotificacoes.isChecked
+        val toggleMarcado = binding.toggleAtivo.isChecked
 
-       val switchMarcado = binding.switchNotificacoes.isChecked
-       val toggleMarcado = binding.toggleAtivo.isChecked
-
-       val texto = "Switch: $switchMarcado toggle: $toggleMarcado"
-       binding.textResultado.text = texto
+        val texto = "Switch: $switchMarcado toggle: $toggleMarcado"
+        binding.textResultado.text = texto
     }
 
     private fun radioButton() {
@@ -80,7 +131,7 @@ class FormularioActivity : AppCompatActivity() {
         //binding.textResultado.text = if (masculino) "Masculino" else "Feminino"
 
         val idItemSelecionado = binding.rgSexo.checkedRadioButtonId
-        binding.textResultado.text = when( idItemSelecionado ) {
+        binding.textResultado.text = when (idItemSelecionado) {
             R.id.rbMasculino -> "Masculino"
             R.id.rbFeminino -> "Feminino"
             else -> "Nada selecionado"
@@ -89,6 +140,7 @@ class FormularioActivity : AppCompatActivity() {
         binding.rgSexo.clearCheck()
     }
 
+}
    /*
     private fun radioButton() {
         val selecionadoMasculino = binding.rbMasculino.isChecked
@@ -100,4 +152,3 @@ class FormularioActivity : AppCompatActivity() {
     }
     */
     //private fun checkbox() {
-}
