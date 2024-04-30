@@ -27,8 +27,18 @@ class FormularioActivity : AppCompatActivity() {
 
             btnEnviar.setOnClickListener {
                 //checkbox()
-                radioButton()
+                //radioButton()
+                switchToggle()
             }
+
+            /*
+            toggleAtivo.setOnClickListener {
+
+            }
+            toggleAtivo.setOnCheckedChangeListener { buttonView, isChecked ->
+
+            }
+            */
             
            /*
             rbMasculino.setOnClickListener {
@@ -56,6 +66,15 @@ class FormularioActivity : AppCompatActivity() {
         }
     }
 
+    private fun switchToggle() {
+
+       val switchMarcado = binding.switchNotificacoes.isChecked
+       val toggleMarcado = binding.toggleAtivo.isChecked
+
+       val texto = "Switch: $switchMarcado toggle: $toggleMarcado"
+       binding.textResultado.text = texto
+    }
+
     private fun radioButton() {
         val masculino = binding.rbMasculino.isChecked
         //binding.textResultado.text = if (masculino) "Masculino" else "Feminino"
@@ -68,12 +87,7 @@ class FormularioActivity : AppCompatActivity() {
         }
 
         binding.rgSexo.clearCheck()
-
-
-
     }
-
-
 
    /*
     private fun radioButton() {
@@ -85,6 +99,5 @@ class FormularioActivity : AppCompatActivity() {
         }
     }
     */
-
     //private fun checkbox() {
 }
