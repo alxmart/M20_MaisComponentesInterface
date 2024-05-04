@@ -54,6 +54,7 @@
             android:id="@+id/switchNotificacoes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="Ativar notificações" />
 
         <ToggleButton
@@ -63,6 +64,13 @@
             android:checked="true"
             android:textOff="INATIVO"
             android:textOn="ATIVO" />
+
+        <Spinner
+            android:id="@+id/spinnerCategorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Seleção da categoria"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/btnEnviar"

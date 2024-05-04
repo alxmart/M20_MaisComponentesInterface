@@ -2,6 +2,7 @@ package com.luizafmartinez.m20_maiscomponentesinterface
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -27,14 +28,16 @@ class FormularioActivity : AppCompatActivity() {
             insets
         }
 
-        with(binding) {
+        spinnerExibicao()
 
+        with(binding) {
             btnEnviar.setOnClickListener { view ->
                 //checkbox()
                 //radioButton()
                 //switchToggle()
                 //exibirSnackBar(view)
-                caixaDialogoAlerta()
+                //caixaDialogoAlerta()
+                spinnerSelecionarItem()
 
                 /*Snackbar.make(
                     view,
@@ -76,6 +79,37 @@ class FormularioActivity : AppCompatActivity() {
             }
             */
         }
+    }
+
+    private fun spinnerSelecionarItem() {
+
+        val itemSelecionado = binding.spinnerCategorias.selectedItem
+        val itemPosicao = binding.spinnerCategorias.selectedItemPosition
+
+        if ( itemPosicao == 0 ) {
+            binding.textResultado.text = "Selecione um item"
+            } else {
+                binding.textResultado.text = "Selecionado: $itemSelecionado, posição: $itemPosicao"
+        }
+
+        //binding.textResultado.text = "Selecionado: $itemSelecionado, posição: $itemPosicao"
+    }
+
+    private fun spinnerExibicao() {
+
+        val categorias = listOf(
+            "Selecione uma categoria",
+            "Eletrônicos",
+            "Roupas",
+            "Móveis",
+            "Sapatos"
+        )
+
+        binding.spinnerCategorias.adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            categorias
+        )
     }
 
     private fun caixaDialogoAlerta() {
