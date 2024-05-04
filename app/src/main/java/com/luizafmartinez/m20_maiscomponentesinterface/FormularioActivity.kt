@@ -107,12 +107,18 @@ class FormularioActivity : AppCompatActivity() {
             "Sapatos"
         )*/
 
-        val categorias = resources.getStringArray(R.array.categorias)
+        /*val categorias = resources.getStringArray(R.array.categorias)
 
         binding.spinnerCategorias.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             categorias
+        )*/
+
+        binding.spinnerCategorias.adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.categorias,
+            android.R.layout.simple_spinner_dropdown_item
         )
 
         binding.spinnerCategorias.onItemSelectedListener = object : OnItemSelectedListener {
