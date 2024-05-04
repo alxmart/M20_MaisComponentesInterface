@@ -2,6 +2,8 @@ package com.luizafmartinez.m20_maiscomponentesinterface
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -86,10 +88,10 @@ class FormularioActivity : AppCompatActivity() {
         val itemSelecionado = binding.spinnerCategorias.selectedItem
         val itemPosicao = binding.spinnerCategorias.selectedItemPosition
 
-        if ( itemPosicao == 0 ) {
+        if (itemPosicao == 0) {
             binding.textResultado.text = "Selecione um item"
-            } else {
-                binding.textResultado.text = "Selecionado: $itemSelecionado, posição: $itemPosicao"
+        } else {
+            binding.textResultado.text = "Selecionado: $itemSelecionado, posição: $itemPosicao"
         }
 
         //binding.textResultado.text = "Selecionado: $itemSelecionado, posição: $itemPosicao"
@@ -110,6 +112,23 @@ class FormularioActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_dropdown_item,
             categorias
         )
+
+        binding.spinnerCategorias.onItemSelectedListener = object : OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                // val itemSelecionado = parent?.getItemAtPosition(position)
+                val itemSelecionado = parent?.selectedItem
+                binding.textResultado.text = itemSelecionado.toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
     }
 
     private fun caixaDialogoAlerta() {
