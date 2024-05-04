@@ -99,13 +99,15 @@ class FormularioActivity : AppCompatActivity() {
 
     private fun spinnerExibicao() {
 
-        val categorias = listOf(
+       /* val categorias = listOf(
             "Selecione uma categoria",
             "Eletrônicos",
             "Roupas",
             "Móveis",
             "Sapatos"
-        )
+        )*/
+
+        val categorias = resources.getStringArray(R.array.categorias)
 
         binding.spinnerCategorias.adapter = ArrayAdapter(
             this,
