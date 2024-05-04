@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">M20_MaisComponentesInterface</string>
-    
+    <!--<string name="app_name">M20_MaisComponentesInterface</string>-->
+    <string name="app_name">Youtube</string>
+
     <string-array name="categorias">
         <item>"Selecione uma categoria"</item>
         <item>"Eletrônicos"</item>
