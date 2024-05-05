@@ -27,6 +27,8 @@ class NovaActivity : AppCompatActivity() {
         binding.includeToolbar.tbPrincipal.title = "Upload de Vídeo"
         setSupportActionBar( binding.includeToolbar.tbPrincipal )
 
+        supportActionBar?.setDisplayHomeAsUpEnabled( true )
+
 
     }
 
