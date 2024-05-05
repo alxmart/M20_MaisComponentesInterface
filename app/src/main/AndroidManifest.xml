@@ -13,9 +13,12 @@
         android:theme="@style/Theme.M20_MaisComponentesInterface"
         tools:targetApi="31">
         <activity
-            android:name=".NovaActivity"
-            android:parentActivityName=".ToolBarActionBarActivity"
+            android:name=".ToolBarActionBarActivity"
             android:exported="false" />
+        <activity
+            android:name=".NovaActivity"
+            android:exported="false"
+            android:parentActivityName=".ToolBarActionBarActivity" />
         <activity
             android:name=".FormularioActivity"
             android:exported="false" />
@@ -32,7 +35,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ToolBarActionBarActivity"
+            android:name=".RelativeLayoutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
