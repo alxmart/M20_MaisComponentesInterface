@@ -9,7 +9,7 @@
         parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Customize your light theme here. -->
-        <item name="actionOverflowButtonStyle">ActionOverflowButton</item>
+        <item name="actionOverflowButtonStyle">@style/ActionOverflowButton</item>
 
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>

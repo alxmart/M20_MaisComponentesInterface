@@ -45,7 +45,7 @@ class ToolBarActionBarActivity : AppCompatActivity() {
             ContextCompat.getColor(this, R.color.white)
         )
 
-        binding.tbPrincipal.inflateMenu(R.menu.menu_principal)
+        /*binding.tbPrincipal.inflateMenu(R.menu.menu_principal)
 
         binding.tbPrincipal.setOnMenuItemClickListener { menuItem ->
 
@@ -82,13 +82,15 @@ class ToolBarActionBarActivity : AppCompatActivity() {
                     return@setOnMenuItemClickListener true
                     // true
                 }
-            }
-        }
-    }
+            }*/
+
 
     //binding.tbPrincipal.subtitle = "Mais detalhes"
 
-    //setSupportActionBar( binding.tbPrincipal ) Se nao usar, vai inflar o menu
+    setSupportActionBar( binding.tbPrincipal ) //Se nao usar, vai inflar o menu
+    inicializarActionBar()
+
+}
 
     private fun inicializarActionBar() {
 
