@@ -54,28 +54,33 @@ class ToolBarActionBarActivity : AppCompatActivity() {
                 R.id.item_adicionar -> {
                     Toast.makeText(applicationContext, "Adicionar", Toast.LENGTH_SHORT)
                         .show()
-                    true
+                    return@setOnMenuItemClickListener true
+                    // true
                 }
 
                 R.id.item_pesquisar -> {
                     Toast.makeText(applicationContext, "Pesquisar", Toast.LENGTH_SHORT)
                         .show()
-                    true
+                    return@setOnMenuItemClickListener true
+                    // true
                 }
 
                 R.id.item_configuracoes -> {
                     Toast.makeText(applicationContext, "Configurações", Toast.LENGTH_SHORT)
                         .show()
-                    true
+                    return@setOnMenuItemClickListener true
+                    // true
                 }
 
                 R.id.item_sair -> {
                     Toast.makeText(applicationContext, "Sair", Toast.LENGTH_SHORT).show()
-                    true
+                    return@setOnMenuItemClickListener true
+                    // true
                 }
 
                 else -> {
-                    true
+                    return@setOnMenuItemClickListener true
+                    // true
                 }
             }
         }
