@@ -9,8 +9,15 @@
         parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Customize your light theme here. -->
+        <item name="actionOverflowButtonStyle">ActionOverflowButton</item>
+
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    
+    <style name="Theme.M20_MaisComponentesInterface" parent="Base.Theme.M20_MaisComponentesInterface"/>
 
-    <style name="Theme.M20_MaisComponentesInterface" parent="Base.Theme.M20_MaisComponentesInterface" />
+    <style name="ActionOverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="tint">@color/white</item>
+    </style>
+
 </resources>
