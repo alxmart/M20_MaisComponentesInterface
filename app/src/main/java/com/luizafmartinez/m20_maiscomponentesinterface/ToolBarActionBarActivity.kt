@@ -26,12 +26,6 @@ class ToolBarActionBarActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_tool_bar_action_bar)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
         inicializarToolbar()
         //supportActionBar?.hide()
         //inicializarActionBar()
@@ -39,9 +33,9 @@ class ToolBarActionBarActivity : AppCompatActivity() {
 
     private fun inicializarToolbar() {
 
-        binding.tbPrincipal.title = "Youtube"
+        binding.includeToolbar.tbPrincipal.title = "Youtube"
 
-        binding.tbPrincipal.setTitleTextColor(
+        binding.includeToolbar.tbPrincipal.setTitleTextColor(
             ContextCompat.getColor(this, R.color.white)
         )
 
@@ -87,7 +81,7 @@ class ToolBarActionBarActivity : AppCompatActivity() {
 
     //binding.tbPrincipal.subtitle = "Mais detalhes"
 
-    setSupportActionBar( binding.tbPrincipal ) //Se nao usar, vai inflar o menu
+    setSupportActionBar( binding.includeToolbar.tbPrincipal ) //Se nao usar, vai inflar o menu
     inicializarActionBar()
 
 }
