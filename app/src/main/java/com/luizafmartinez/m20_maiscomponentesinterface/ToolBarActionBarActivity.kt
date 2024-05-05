@@ -32,7 +32,7 @@ class ToolBarActionBarActivity : AppCompatActivity() {
             insets
         }
 
-    inicializarToolbar()
+        inicializarToolbar()
         //supportActionBar?.hide()
         //inicializarActionBar()
     }
@@ -47,10 +47,43 @@ class ToolBarActionBarActivity : AppCompatActivity() {
 
         binding.tbPrincipal.inflateMenu(R.menu.menu_principal)
 
-        //binding.tbPrincipal.subtitle = "Mais detalhes"
+        binding.tbPrincipal.setOnMenuItemClickListener { menuItem ->
 
-        //setSupportActionBar( binding.tbPrincipal ) Se nao usar, vai inflar o menu
+            when (menuItem.itemId) {
+
+                R.id.item_adicionar -> {
+                    Toast.makeText(applicationContext, "Adicionar", Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                }
+
+                R.id.item_pesquisar -> {
+                    Toast.makeText(applicationContext, "Pesquisar", Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                }
+
+                R.id.item_configuracoes -> {
+                    Toast.makeText(applicationContext, "Configurações", Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                }
+
+                R.id.item_sair -> {
+                    Toast.makeText(applicationContext, "Sair", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                else -> {
+                    true
+                }
+            }
+        }
     }
+
+    //binding.tbPrincipal.subtitle = "Mais detalhes"
+
+    //setSupportActionBar( binding.tbPrincipal ) Se nao usar, vai inflar o menu
 
     private fun inicializarActionBar() {
 
@@ -74,12 +107,17 @@ class ToolBarActionBarActivity : AppCompatActivity() {
                         }
 
                         R.id.item_configuracoes -> {
-                            Toast.makeText(applicationContext, "Configurações", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                applicationContext,
+                                "Configurações",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
 
                         R.id.item_sair -> {
-                            Toast.makeText(applicationContext, "Sair", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "Sair", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
                     return true
